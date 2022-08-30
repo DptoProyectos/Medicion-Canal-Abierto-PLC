@@ -1,0 +1,38 @@
+(*2*)
+(* Network 0 *)
+(*YCH*)
+LD    TRUE
+MOVE    4, AI_IMIN
+(* Network 1 *)
+LD    TRUE
+MOVE    20, AI_IMAX
+(* Network 2 *)
+LD    TRUE
+MOVE    1.5, AI_MMIN
+(* Network 3 *)
+LD    TRUE
+MOVE    0.5, AI_MMAX
+(* Network 4 *)
+LD    TRUE
+MOVE    4000.0, AO_ADJ_IMIN
+(* Network 5 *)
+LD    TRUE
+MOVE    20000.0, AO_ADJ_IMAX
+(* Network 6 *)
+LD    TRUE
+MOVE    0.4, DMIN
+(* Network 7 *)
+LD    TRUE
+MOVE    0.7, DMAX
+(* Network 8 *)
+LD    TRUE
+MOVE    0.3, HMAX
+(* Network 9 *)
+LD    TRUE
+MOVE    0.4, CnD
+(* Network 10 *)
+LD    TRUE
+MOVE    0.13, CnN
+(* Network 11 *)
+LD    TRUE
+MOVE    0.001, CnSo

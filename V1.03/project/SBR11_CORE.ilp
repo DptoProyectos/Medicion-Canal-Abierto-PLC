@@ -1,0 +1,9 @@
+(*2*)
+(* Network 0 *)
+(*YCHCondición para ejecutar el bloque de configuraciones iniciales. Solo se ejecuta una vez cuando se descarga el soft del PLC*)
+LDN    %V3648.1
+TON   T5, 1
+__CR_EQ_1
+MOVE    T5, int0
+__CR_RESTORE
+S    %V3648.1

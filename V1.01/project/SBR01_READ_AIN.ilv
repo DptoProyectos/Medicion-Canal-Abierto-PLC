@@ -1,0 +1,12 @@
+VAR_INPUT
+    IMIN  AT  %LW32 : INT ; (* rango mínimo de la señal de salida del sensor a conectar (0-20) *) 
+    IMAX  AT  %LW34 : INT ; (* rango máximo de la señal de salida del sensor a conectar (0-20) *) 
+    MMIN  AT  %LD36 : REAL ; (* valor mínimos de la magnitud leida por el sensor *) 
+    MMAX  AT  %LD40 : REAL ; (* valor máximo de la magnitud leída por el sensor *) 
+END_VAR
+VAR_OUTPUT
+    ALAR  AT  %L0.3 : BOOL ; (* alarma {0=>sensor OK | 1=> sensor FAIL}: Se activa cuando pasan 5 segundos con los valores por debajo de MMIN o arriba de MMAX *) 
+    HIG  AT  %L0.4 : BOOL ; (* estado de alarma {1=> sensor overflow }: Indica que se activo la alarma porque la medicion del senso superó MMAX *) 
+    LOW  AT  %L0.5 : BOOL ; (* estado de alarma {1=> sensor underflow }: Indica que se activo la alarma porque la medicion no alcanza MMIN *) 
+    AO  AT  %LD44 : REAL ; (* valor leído del canal analógico de entrada *) 
+END_VAR

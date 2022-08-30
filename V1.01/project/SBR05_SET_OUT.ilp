@@ -1,0 +1,91 @@
+(*2*)
+(* Network 0 *)
+(*PREPARACION DE VALORES DE ENTRADA*)
+LD    TRUE
+AND(
+LD    TRUE
+MOVE    IMIN, int0
+MUL    1000, int0
+OR(
+LD    TRUE
+MOVE    IMAX, int2
+MUL    1000, int2
+)
+)
+(* Network 1 *)
+(*MODO NORMAL*)
+LDN    MODE
+MOVE    IOUT, int1
+(* Network 2 *)
+(*MODO CALIBRACIONCALIBRACION ELECTRICA DE CERO*)
+LD    MODE
+ANDN    ADJ
+AND(
+LD    TRUE
+MOVE    IMIN, int1
+MUL    1000, int1
+OR(
+LD    TRUE
+R_TRIG
+EQ    SPAN, 0.0
+I_TO_DI    int1, dint0
+DI_TO_R    dint0, CERO
+)
+OR(
+LD    AUM
+R_TRIG
+R_TO_DI    CERO, dint0
+INC    dint0
+DI_TO_R    dint0, CERO
+)
+OR(
+LD    DIS
+R_TRIG
+R_TO_DI    CERO, dint0
+DEC    dint0
+DI_TO_R    dint0, CERO
+)
+OR(
+LD    TRUE
+MOVE    CERO, VAL
+)
+)
+(* Network 3 *)
+(*MODO CALIBRACIONCALIBRACION ELECTRICA DEL FONDO DE ESCALA*)
+LD    MODE
+AND    ADJ
+AND(
+LD    TRUE
+MOVE    IMAX, int1
+MUL    1000, int1
+OR(
+LD    TRUE
+R_TRIG
+EQ    SPAN, 0.0
+I_TO_DI    int1, dint0
+DI_TO_R    dint0, SPAN
+)
+OR(
+LD    AUM
+R_TRIG
+R_TO_DI    SPAN, dint0
+INC    dint0
+DI_TO_R    dint0, SPAN
+)
+OR(
+LD    DIS
+R_TRIG
+R_TO_DI    SPAN, dint0
+DEC    dint0
+DI_TO_R    dint0, SPAN
+)
+OR(
+LD    TRUE
+MOVE    SPAN, VAL
+)
+)
+(* Network 4 *)
+(*CALCULO DE PENDIENTESETEO DE SALIDA*)
+LD    TRUE
+LINCO    int0, int2, CERO, SPAN, 1.0, int1, dint0, real0
+DI_TO_I    dint0, %AQW0

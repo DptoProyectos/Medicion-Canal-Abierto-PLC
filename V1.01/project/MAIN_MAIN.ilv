@@ -1,0 +1,3 @@
+VAR
+    link_Int  AT  %LW122 : INT ; (*  *) 
+END_VAR

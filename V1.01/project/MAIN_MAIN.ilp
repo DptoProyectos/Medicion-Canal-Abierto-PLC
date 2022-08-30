@@ -1,0 +1,11 @@
+(*2*)
+(* Network 0 *)
+(*VARIABLES DE INTERCAMBIO CON EL HMI*)
+LD    %SM0.0
+CAL    SBR00
+(* Network 1 *)
+LD    %SM0.0
+CAL    SBR07
+(* Network 2 *)
+LD    %SM0.0
+CAL    SBR08
