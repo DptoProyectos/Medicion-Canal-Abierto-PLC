@@ -11,7 +11,7 @@ LD    TRUE
 MOVE    1.5, AI_MMIN
 (* Network 3 *)
 LD    TRUE
-MOVE    0.5, AI_MMAX
+MOVE    0.05, AI_MMAX
 (* Network 4 *)
 LD    TRUE
 MOVE    4000.0, AO_ADJ_IMIN
@@ -32,7 +32,7 @@ LD    TRUE
 MOVE    0.4, CnD
 (* Network 10 *)
 LD    TRUE
-MOVE    0.13, CnN
+MOVE    0.013, CnN
 (* Network 11 *)
 LD    TRUE
 MOVE    0.001, CnSo
